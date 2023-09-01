@@ -10,7 +10,7 @@ const categoryHandler = async () => {
     console.log(category.category_id);
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-   <button onclick="handleVideo('${category.category_id}')" class="bg-gray-200 px-3 py-2 rounded"> ${category.category} </button>
+   <button id="btn-design" onclick="handleVideo('${category.category_id}');design('${categories}')"> ${category.category} </button>
    `;
     categoryContaner.appendChild(categoryDiv);
   });
@@ -25,6 +25,11 @@ const handleVideo = async (id) => {
   const data = await responsive.json();
   const videoData = data.data;
   console.log(videoData);
+  const btnDesign = document.getElementById("btn-design");
+  btnDesign.addEventListener("click", function design(designId) {
+    console.log(designId);
+    btnDesign.classList.add("active");
+  });
   const noVideo = document.getElementById("no-video");
   if (videoData.length === 0) {
     noVideo.classList.remove("hidden");

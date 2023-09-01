@@ -10,7 +10,7 @@ const categoryHandler = async () => {
     console.log(category.category_id);
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-   <button onclick="handleVideo('${category.category_id}')"> ${category.category} </button>
+   <button onclick="handleVideo('${category.category_id}')" class="bg-gray-200 px-3 py-2 rounded"> ${category.category} </button>
    `;
     categoryContaner.appendChild(categoryDiv);
   });
@@ -24,16 +24,29 @@ const handleVideo = async (id) => {
   );
   const data = await responsive.json();
   const videoData = data.data;
+  console.log(videoData);
+  const noVideo = document.getElementById("no-video");
+  if (videoData.length === 0) {
+    noVideo.classList.remove("hidden");
+  } else {
+    noVideo.classList.add("hidden");
+  }
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = "";
   videoData.forEach((video) => {
-    // console.log(video);
+    const length = Object.keys(video).length;
+    const dateMin = (video.others.posted_date / 60).toFixed(2);
+    const dateHour = Math.floor((dateMin / 60).toFixed(2));
+    const minute = Math.floor(dateMin - dateHour * 60);
     const videoDiv = document.createElement("div");
     videoDiv.innerHTML = `
   <div class="card h-96 bg-base-100 shadow-xl">
-  <figure><img class="h-48 w-full" src="${
-    video.thumbnail
-  }" alt="Shoes" /></figure>
+  <figure class="relative">
+  <img class="h-48 w-full" src="${video.thumbnail}" alt="Shoes" />
+ </figure>
+ <div class="text-xs bg-slate-900 text-gray-100 absolute top-40 p-1 right-0 rounded "> ${
+   dateHour === 0 ? "" : dateHour
+ } hrs ${minute === 0 ? "" : minute} Min ago </div>
   <div class="card-body">
   <div class="flex gap-2 items-center">
   <img class="w-12 h-12 rounded-full" src="${
@@ -58,4 +71,4 @@ const handleVideo = async (id) => {
 };
 
 categoryHandler();
-handleVideo();
+handleVideo(1000);

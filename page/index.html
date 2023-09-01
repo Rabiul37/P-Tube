@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-4xl font-bold text-center m-5">
+        Wellcome to My javascript <span class="text-red-500"> Blog</span>
+      </h1>
+      <hr />
+    </header>
+    <main class="w-9/12 m-auto mt-5">
+      <!-- let const var  -->
+      <div>
+        <h1 class="text-3xl font-semibold">
+          <span class="text-red-500 font-bold">=></span> Let's know about the
+          scope of var , let and const
+        </h1>
+        <div>
+          <h2 class="text-1xl font-semibold text-gray-600">
+            The scope of variables declared using let, const, and var in
+            JavaScript determines where these variables are accessible and
+            usable within your code. Each of these keywords has a slightly
+            different scope behavior:
+          </h2>
+        </div>
+        <!-- var start  -->
+        <div class="mt-10">
+         <h1 class="text-2xl font-bold text-red-500">1 . var:</h1>
+         <p class="text-1xl font-medium">
+            <span class="text-2xl font-bold">.</span> Variables declared with var have function-level scope  or are globally
+            scoped if declared outside of a function. <br>
+            <span class="text-2xl font-bold">.</span> They are hoisted to the top of their containing function or global scope, meaning they are
+            available throughout the entire function or global context regardless
+            of where they are declared.<br> 
+            <span class="text-2xl font-bold">.</span>  If you declare a variable using var within
+            a block (inside if statements, loops, etc.), the variable will be
+            accessible outside of that block as well. This behavior is known as
+            "hoisting."</p>
+         </div>
+         <!-- var end -->
+         <!-- let start  -->
+         <div class="mt-10">
+            <h1 class="text-2xl font-bold text-red-500">2 . let:</h1>
+            <p class="text-1xl font-medium mb-2">
+               <span class="text-2xl font-bold">.</span> Variables declared with let have block-level scope. <br>
+               <span class="text-2xl font-bold">.</span>They are also hoisted, but they are not initialized to a value until the declaration is encountered during execution. This means you'll get a ReferenceError if you try to access the variable before its declaration.<br> 
+               <span class="text-2xl font-bold">.</span>  Variables declared with let are limited to the block in which they are declared.</p>
+         </div>
+         <!-- let end  -->
+
+         <!-- const start -->
+         <div class="mt-10">
+            <h1 class="text-2xl font-bold text-red-500">3 . const:</h1>
+            <p class="text-1xl font-medium mb-2">
+               <span class="text-2xl font-bold">.</span> Variables declared with const also have block-level scope.<br>
+               <span class="text-2xl font-bold">.</span>Like let, they are hoisted but not initialized before the declaration.<br> 
+               <span class="text-2xl font-bold">.</span> The key difference with const is that once you assign a value to it, you cannot reassign it to a new value. However, the immutability of const only applies to the binding (variable name), not necessarily the value it points to (for objects and arrays, the internal properties can still be modified).</p>
+         </div>
+         <!-- const end -->
+         
+      </div>
+      <!-- let const var end -->
+
+<!-- null and undefine start  -->
+<hr>
+<div class="mt-10">
+    <h1 class="text-3xl font-semibold">
+        <span class="text-red-500 font-bold">=></span> Let's know about the
+         use cases of null and undefined.
+      </h1>
+      <div>
+        <h2 class="text-1xl font-semibold text-gray-600">
+            In JavaScript, both null and undefined represent the absence of a value, but they are used in slightly different contexts. Here are the use cases for each:
+        </h2>
+      </div>
+</div>
+
+<!-- null start here -->
+<div class="mt-10">
+    <h1 class="text-2xl font-bold text-red-500">1 . null :</h1>
+    <p class="text-1xl font-medium mb-2">
+       <span class="text-2xl font-bold">.</span> null is an intentional absence of any value. It is used when you want to explicitly indicate that a variable or object property has no value or is intentionally empty.  <br>
+       <span class="text-2xl font-bold">.</span>It can be assigned to a variable to represent the absence of a meaningful value.<br> 
+       <span class="text-2xl font-bold">.</span>  Unlike undefined, null is a value that can be assigned.</p>
+ </div>
+<!-- null end here -->
+<!-- undefine start here -->
+<div class="mt-10">
+    <h1 class="text-2xl font-bold text-red-500">2 . undefined :</h1>
+    <p class="text-1xl font-medium mb-2">
+       <span class="text-2xl font-bold">.</span> When a variable is declared but not initialized with a value, it is automatically assigned the value undefined.  <br>
+       <span class="text-2xl font-bold">.</span>If a function doesn't explicitly return a value, it returns undefined by default.<br> 
+       <span class="text-2xl font-bold">.</span>  When an object has a property that is not defined, accessing that property will also yield undefined. <br> 
+       <span class="text-2xl font-bold">.</span>undefined is often used to check whether a variable has been assigned a value or not.</p>
+ </div>
+<!-- undefine end here -->
+
+<!-- summary start -->
+<div class="mt-10">
+    <h1 class="text-2xl font-bold text-red-500"> In summary :</h1>
+    <p class="text-1xl font-medium mb-2">
+       <span class="text-2xl font-bold">.</span> Use undefined when a variable or property has not been initialized or defined. <br>
+       <span class="text-2xl font-bold">.</span> Use null when you want to explicitly indicate that a variable or property has no meaningful value or is intentionally empty.<br> 
+       <span class="text-2xl font-bold">.</span> In most cases, it's better to use null explicitly if you want to indicate the absence of value, and avoid relying on undefined for such cases. <br> 
+       <span class="text-2xl font-bold">.</span>undefined is often used to check whether a variable has been assigned a value or not.</p> 
+       <p class="text-2xl font-medium m-5">Keep in mind that both null and undefined are falsy values in JavaScript, which means they evaluate to false in boolean contexts.</p>
+ </div>
+<!-- summary start -->
+<!-- null and undefine end  -->
+<hr>
+<!-- REST API START HERE -->
+<div class="mt-10">
+    <h1 class="text-3xl font-semibold">
+        <span class="text-red-500 font-bold">=></span> Let's know about Rest API</h1>
+      <div>
+        <h2 class="text-1xl font-semibold text-gray-600">
+            A REST API (Representational State Transfer Application Programming Interface) is a set of rules and conventions for building and interacting with web services using the HTTP protocol. It's a way to enable communication between different software systems over the internet. REST APIs are commonly used for web applications to provide a standardized and scalable way to expose and consume data and services.
+            Key principles of a REST API include : 
+        </h2>
+      </div>
+</div>
+<div class="mb-10">
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  1. Resources : </h1>
+        <span class="text-1xl font-semibold text-gray-600"> REST APIs use HTTP methods to perform various operations on resources. The most common HTTP methods used in RESTful APIs are :</p>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  2. HTTP Methods (Verbs) : </h1>
+        <span class="text-1xl font-semibold text-gray-600">APIs are built around resources, which can be thought of as entities or objects that you want to manage or manipulate. Resources are identified by URLs (Uniform Resource Locators).</p>
+            <p class="text-1xl font-medium mb-2 ml-10">
+                <span class="text-xl font-semibold">. GET : </span>  Retrieve data from a resource. <br>
+                <span class="text-xl font-semibold">. POST :</span> Create a new resource.<br> 
+                <span class="text-xl font-semibold">. PUT : </span> Update an existing resource or create a resource if it doesn't exist. <br> 
+                <span class="text-xl font-semibold">. DELETE :</span>Remove a resource.
+            </p> 
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  3. Statelessness :  </h1>
+        <span class="text-1xl font-semibold text-gray-600"> Each API request should contain all the information needed to understand and process the request. The server doesn't store client state between requests. This means that every request from a client to the server must contain all the necessary information for the server to understand and fulfill the request.</p>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  4. Uniform Interface :   </h1>
+        <span class="text-1xl font-semibold text-gray-600"> The API should have a consistent and uniform way to access and manipulate resources. This includes using standard HTTP methods and status codes.</p>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  5. Representation :   </h1>
+        <span class="text-1xl font-semibold text-gray-600"> Resources are represented in different formats, such as JSON (JavaScript Object Notation) or XML. Clients and servers can negotiate the format they understand best.</p>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mt-5">  6. Hypermedia as the Engine of Application State (HATEOAS) :  </h1>
+        <span class="text-1xl font-semibold text-gray-600"> This principle suggests that a REST API should provide links to related resources within its responses. Clients can then navigate through the API by following these links, reducing the need for prior knowledge of the API structure.</p>
+    </div>
+    
+    <p class="text-1xl font-semibold text-gray-600"> REST APIs are widely used in web development for building services that can be consumed by various clients, such as web browsers, mobile apps, and other server applications. They provide a flexible and scalable way to expose and consume data, perform operations, and interact with remote systems in a standardized manner.</p>
+</div>
+
+
+<!-- REST API START HERE -->
+ <h1 class="text-4xl font-bold text-center m-5 text-red-600 ">Connect with me to know more information</h1>
+    </main>
+    <footer></footer>
+  </body>
+</html>

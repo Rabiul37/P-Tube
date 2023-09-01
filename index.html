@@ -26,11 +26,13 @@
         <div class="navbar-start">
           <img src="logo/Logo.png" alt="" />
         </div>
-        <div class="navbar-center">
+        <div id="data-sort" class="navbar-center">
           <button class="btn">Sort by view</button>
         </div>
         <div class="navbar-end">
-          <button class="btn btn-error">Blog</button>
+          <a href="http://127.0.0.1:5500/page/index.html" target="_blank">
+            <button class="btn btn-error text-white">Blog</button>
+          </a>
         </div>
       </div>
       <!-- navigation menu end here -->
@@ -50,17 +52,21 @@
         class="w-11/12 m-auto grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
       ></div>
       <!-- video container end here -->
+
+      <!-- no video start here -->
+      <div id="no-video" class="hidden">
+        <div class="flex justify-center items-center mt-20">
+          <img src="logo/Icon.png" alt="" />
+        </div>
+        <h1 class="text-3xl font-semibold text-red-500 text-center mt-5">
+          Oops!! Sorry, There is no content here
+        </h1>
+      </div>
+      <!-- no video end here -->
     </main>
 
-    <footer>
-      <img class="w-5" src="logo/varify.png" alt="" />
-    </footer>
+    <footer></footer>
 
     <script src="PHero.js"></script>
   </body>
 </html>
-
-<!-- 
-   
-     === 'true' ? '<img src="logo/varify.png" alt=""></img>' : ''
- -->
